@@ -49,30 +49,24 @@
         }
         //debug($menus);
         $html = '';
-        $html .= '<ul class="navbar-nav ml-auto ">';
+        $html .= '<ul class="menu">';
         foreach($menus as $menu){
             if(isset($menu['submenu'])){
                 if($menu['page']){
-                    $html .= '<li class="nav-item">
-                    <a class="nav-link" href="'.$menu['page'].'">'.$menu['cate_name'].' <span class="sr-only">(current)</span></a>
-                ';
+                    $html .= '<li><a href="'.$menu['page'].'">'.$menu['cate_name'].' </a>
+                    ';
                 }else{
-                    $html .= '<li class="nav-item">
-                    <a class="nav-link" href="#">'.$menu['cate_name'].' <span class="sr-only">(current)</span></a>
-                ';
+                    $html .= '<li><a href="#">'.$menu['cate_name'].' </a>
+                    ';
                 }
-                if(is_array($menu['submenu'])){
-                    $html .= '<ul class="dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  </a>';
+                if(is_array( $menu['submenu'])){
+                    $html .= '<ul class="dropdown">';
                     foreach($menu['submenu'] as $submenu){
                         if($submenu['page']){
-                            $html .= '<li class="nav-item">
-                            <a class="nav-link" href="'.$menu['page'].'">'.$menu['cate_name'].' <span class="sr-only">(current)</span></a>
-                        </li>';
+                            $html .= '<li><a href="'.$submenu['page'].'">'.$submenu['cate_name'].' </a></li>';
                         }else{
-                            $html .= '<li class="nav-item">
-                            <a class="nav-link" href="#">'.$menu['cate_name'].' <span class="sr-only">(current)</span></a>
-                        </li>';
+                            $html .= '<li><a href="#">'.$submenu['cate_name'].' </a>
+                            </li>';
                         }
                     }
                     $html .= '</ul>';
@@ -80,12 +74,10 @@
                 $html .= '</li>';
             }else{
                 if($menu['page']){
-                    $html .= '<li class="nav-item">
-                    <a class="nav-link" href="'.$menu['page'].'">'.$menu['cate_name'].' <span class="sr-only">(current)</span></a>
+                    $html .= '<li><a href="'.$menu['page'].'">'.$menu['cate_name'].' </a>
                 </li>';
                 }else{
-                    $html .= '<li class="nav-item">
-                    <a class="nav-link" href="#">'.$menu['cate_name'].' <span class="sr-only">(current)</span></a>
+                    $html .= '<li><a href="#">'.$menu['cate_name'].' </a>
                 </li>';
                 }
             }
@@ -94,21 +86,3 @@
         return $html;
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<title>Title</title>
-</head>
-<body>
-<?php display_menu() ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</body>
-</html>

@@ -1,26 +1,58 @@
-.navbar{
-    font-size: .6em !important;
-    background: darkgreen;
+body{
+        font-family:arial, sans-serif;
+        font-size: 0.7em;
     }
-    .nav-link{
-        margin-left: 10px;
+    .container{
+        width: 1024px;
     }
-    /*change color hover logo and margin*/ 
-    .navbar .navbar-brand{
+    .top-nav{
+        background-color: darkgreen;
+        height: 40px;
+        line-height: 40px;
+    }
+    .top-nav > .menu{
+        list-style-type: none;
+        text-align: center;
+        position: relative;
+    }
+    .top-nav > .menu > li{
+        display: inline-block;
+    }
+    .top-nav > .menu > li:hover >.dropdown{
+            display: block;
+            
+    }
+    .top-nav > .menu > li > a{
+            display: block;
             color: white;
-            margin-left: 80px;
     }
-    /*change color hover logo*/ 
-    .navbar .navbar-brand:hover{
-
-            color: white!important;
+    .top-nav .dropdown{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        position: absolute;
+        background-color: darkgreen;
+        margin-top: -5px;
+       display: none;
+       
     }
-    /*change color color text a*/ 
-    .navbar .navbar-nav li a{
-            color: white !important;
+    .top-nav .dropdown li a{
+        display: block;
+        color: white;
+        background-color: darkgreen;
+        text-align: left;
+        width: 150px;
+        margin-left: 10px;
         
     }
-    /*change color hover a*/ 
-    #navbarSupportedContent > ul > li > a:hover{
-      background: lightgreen;
+    body > header > nav > ul > li{
+            width: 120px;
+            margin: 0;
+            padding: 0;
+            font-size: 8px;
     }
+    body > header > nav > ul > li:nth-child(1) > a{
+           margin-left: -30px;
+           font-size: 18px;
+    }
+    
